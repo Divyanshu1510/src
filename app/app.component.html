@@ -1,0 +1,33 @@
+﻿<div *ngIf="user" class="vertical-navbar bg-gray p-4" id="sidebar">
+    <p class="text-white font-weight-bold text-uppercase">Dashboard</p>
+    <ul class=" nav flex-column bg-gray mb-0">
+        <li class="nav-item">
+            <div class="navbar-nav text-white">
+                <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">Home</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="navbar-nav text-white">
+                <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">Users</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="navbar-nav text-white">
+                <a><button class="btn btn-link nav-item nav-link " (click)="logout()">Logout</button></a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="navbar-nav text-white">
+                <a class="nav-item nav-link" routerLink="/lazy" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">Lazy</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
