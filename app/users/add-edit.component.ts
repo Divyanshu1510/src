@@ -36,9 +36,9 @@ export class AddEditComponent implements OnInit {
             lastName: ['', Validators.required],
             username: ['', Validators.required],
             phoneNumber: ["", [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-            Email: ["", [Validators.required, Validators.email]],
-            password: ['', [Validators.minLength(8), ...(!this.id ? [Validators.required] : []),
-            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]],
+            Email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"), Validators.email]],
+            password: ['', [Validators.required, Validators.minLength(8),
+            Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)]]
         });
 
         this.title = 'Add User';
