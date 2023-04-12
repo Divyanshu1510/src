@@ -60,7 +60,8 @@
                 <label class="form-label">Password</label>
                 <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password" class="form-control"
                     [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                <button class=" btn btn-dark btn-sm mt-1" (click)="togglePasswordVisibility()">{{ showPassword ? 'Hide'
+                <button class=" btn btn-dark btn-sm mt-1" (click)="togglePasswordVisibility()">{{
+                    showPassword ? 'Hide'
                     : 'Show' }} Password and Requirements</button>
                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required</div>
@@ -69,14 +70,14 @@
                         special character,and a number. </div>
                 </div>
             </div>
-            <div class="mb-3">
+            <div>
                 <button [disabled]="!myForm.form.valid" class="btn btn-primary">
                     <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
                     Save
                 </button>
                 <a routerLink="/users" class="btn btn-link">Cancel</a>
             </div>
+
         </form>
-        <div *ngIf="loading" class="text-center m-5">
-            <span class="spinner-border spinner-border-lg align-center"></span>
-        </div>
+    </div>
+</div>

@@ -40,12 +40,12 @@
                         [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
                     <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
                         <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
-                        <div *ngIf="f.phoneNumber.errors.email">Enter a Valid phone number</div>
+                        <div *ngIf="f.phoneNumber.errors.pattern">Enter a Valid phone number</div>
                     </div>
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class=" mb-3">
                 <label class="form-label">Email Id</label>
                 <input type="email" formControlName="Email" class="form-control"
                     [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
@@ -60,13 +60,14 @@
                 <label class="form-label">Password</label>
                 <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password" class="form-control"
                     [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                <button class=" btn btn-dark btn-sm mt-1" (click)="togglePasswordVisibility()">{{ showPassword ? 'Hide'
+                <button class=" btn btn-dark btn-sm mt-1" (click)="togglePasswordVisibility()">{{
+                    showPassword ? 'Hide'
                     : 'Show' }} Password and Requirements</button>
                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required</div>
                     <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                    <div *ngIf="f.password.errors.pattern">Password must have a lowercase and a uppercase letter, a
-                        special character,and a number. </div>
+                    <div *ngIf="f.password.errors.pattern">Password must have a lowercase and a uppercase
+                        letter, a special character,and a number. </div>
                 </div>
             </div>
             <div>
