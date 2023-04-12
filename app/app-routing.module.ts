@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'users', loadChildren: usersModule },
     { path: 'account', loadChildren: accountModule },
-    { path: 'lazy', loadChildren: () => import('../lazy/lazy.module').then(m => m.LazyModule) },
+    { path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
 ];
 
 @NgModule({
