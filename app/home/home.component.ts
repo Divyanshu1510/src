@@ -11,3 +11,4 @@ export class HomeComponent {
         this.user = this.accountService.userValue;
     }
 }
+
